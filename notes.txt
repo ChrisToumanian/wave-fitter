@@ -1,0 +1,10 @@
+python3 wave.py help
+<amplitude> <period> <vertical shift> <phase shift> <range a> <range b> <step> <output image name>
+
+python3 wave.py 10 0.1 0 0 0 200 0.1 ~/site/web/downloads/plot > plot.txt
+
+amplitude: above and below 0 (+ vertical shift)
+
+y = A * sin(angular_wave_number * x - angular_freq * time + phase) + vert
+
+
