@@ -14,18 +14,17 @@ def main():
 	image_name = "plot"
 	y_label = "y"
 	x_label = "x"
-	scatter = False
 
 	# options
 	for i in range(len(sys.argv)):
 		if (sys.argv[i] == "-o" or sys.argv[i] == "-out"):
 			image_name = str(sys.argv[i + 1])
+	for i in range(len(sys.argv)):
 		if (sys.argv[i] == "-xlabel"):
 			x_label = str(sys.argv[i + 1])
+	for i in range(len(sys.argv)):
 		if (sys.argv[i] == "-ylabel"):
 			y_label = str(sys.argv[i + 1])
-		if (sys.argv[i] == "-scatter"):
-			scatter = True
 
 	# build arrays
 	for line in lines:
@@ -39,12 +38,7 @@ def main():
 	plt.ylabel(y_label)
 	plt.xlabel(x_label)
 	plt.grid(True)
-
-	if (scatter):
-		plt.scatter(x_array, y_array, color='b', s=0.1)
-	else:
-		plt.plot(x_array, y_array)
-
+	plt.scatter(x_array, y_array, color='b', s=0.1)
 	plt.savefig(image_name + '.png')
 	plt.close(fig)
 
